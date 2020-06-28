@@ -1,0 +1,31 @@
+<div *ngIf="word">
+    <h5>{{word.French | uppercase}}</h5>
+    <div><span>Vietnamien: </span>{{word.Vietnam}}</div>
+    <div *ngIf="!getEditMode()">
+        <span>Prononciation: </span>{{word.Prononciation}} <br/>
+        <span>Exemple: </span>{{word.Exemple}}
+    </div>          
+         <div *ngIf="getEditMode()">
+            <br />   
+            <div class="row">
+                <label class="text-right col-xs-4 col-sm-4">Prononciation</label>
+                <input class="col-xs-8 col-sm-8" [(ngModel)]="word.Prononciation" placeholder=""/>
+            </div>
+            <br />        
+            <div class="row">
+
+                <label class="text-right col-xs-4 col-sm-4">Exemple</label>
+                <input class="col-xs-8 col-sm-8" [(ngModel)]="word.Exemple" placeholder=""/>
+            </div>
+        </div>
+
+        <br/>
+        <button *ngIf="!getEditMode()" class="card" (click)="onEdit()">
+            Edit
+        </button>       
+        <button *ngIf="getEditMode()" class="card" (click)="onSave()">
+            Save
+        </button>    
+  </div>
+
+

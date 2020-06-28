@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm2">    
+          <ul class="words">
+              <li *ngFor="let word of words" (click)="onSelect(word)"  [class.selected]="word === selectedWord">
+                <span class="badge">{{word.Id}}</span>{{word.French | uppercase}}            
+              </li>
+          </ul>
+      </div>
+      <div class="col-sm8">
+        <app-word-detail [word]="selectedWord" [editMode]="editMode" ></app-word-detail>
+      </div>
+  </div>
+</div>

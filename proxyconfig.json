@@ -1,0 +1,9 @@
+{
+    "/api/*": {       
+        "target": "https://nhaen.somee.com/api",
+        "secure": false,
+        "changeOrigin":true,
+        "logLevel": "debug",
+        "pathRewrite": {"^/api" : ""}
+    }
+}
